@@ -126,11 +126,18 @@ FAQ
 
 No. hystrix-go does not use ```recover()``` so panics will kill the process like normal.
 
-Build and Test
---------------
+Contribute
+----------
 
-- Install vagrant and VirtualBox
-- Clone the hystrix-go repository
-- Inside the hystrix-go directory, run ```vagrant up```, then ```vagrant ssh```
-- ```cd /go/src/github.com/kargakis/hystrix-go```
-- ```go test ./...```
+Build the project:
+```
+make build
+```
+Run the unit tests:
+```
+make test
+```
+Run the verification tests:
+```
+make verify
+```
