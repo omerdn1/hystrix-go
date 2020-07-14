@@ -5,7 +5,7 @@ import (
 	"sync"
 	"time"
 
-	"github.com/kargakis/hystrix-go/hystrix/metric_collector"
+	metricCollector "github.com/kargakis/hystrix-go/hystrix/metric_collector"
 	"github.com/kargakis/hystrix-go/hystrix/rolling"
 )
 

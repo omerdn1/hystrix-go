@@ -12,7 +12,7 @@ func TestReturn(t *testing.T) {
 	defer Flush()
 
 	Convey("when returning a ticket to the pool", t, func() {
-		pool := newExecutorPool(context.Background(),"pool")
+		pool := newExecutorPool(context.Background(), "pool")
 		ticket := <-pool.Tickets
 		pool.Return(ticket)
 		time.Sleep(1 * time.Millisecond)
