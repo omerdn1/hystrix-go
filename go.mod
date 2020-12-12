@@ -7,4 +7,6 @@ require (
 	github.com/cactus/go-statsd-client/statsd v0.0.0-20200623234511-94959e3146b2
 	github.com/rcrowley/go-metrics v0.0.0-20200313005456-10cdbea86bc0
 	github.com/smartystreets/goconvey v1.6.4
+	github.com/stretchr/testify v1.6.1 // indirect
+	golang.org/x/tools v0.0.0-20190328211700-ab21143f2384
 )
