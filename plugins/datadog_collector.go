@@ -5,7 +5,7 @@ import (
 	// Developed on https://github.com/DataDog/datadog-go/tree/a27810dd518c69be741a7fd5d0e39f674f615be8
 	"github.com/DataDog/datadog-go/statsd"
 
-	metricCollector "github.com/kargakis/hystrix-go/hystrix/metric_collector"
+	metricCollector "github.com/omerdn1/hystrix-go/hystrix/metric_collector"
 )
 
 // These metrics are constants because we're leveraging the Datadog tagging
@@ -76,8 +76,8 @@ type (
 //  package main
 //
 //  import (
-//  	"github.com/kargakis/hystrix-go/plugins"
-//  	"github.com/kargakis/hystrix-go/hystrix/metric_collector"
+//  	"github.com/omerdn1/hystrix-go/plugins"
+//  	"github.com/omerdn1/hystrix-go/hystrix/metric_collector"
 //  )
 //
 //  func main() {

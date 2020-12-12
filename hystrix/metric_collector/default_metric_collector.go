@@ -3,7 +3,7 @@ package metricCollector
 import (
 	"sync"
 
-	"github.com/kargakis/hystrix-go/hystrix/rolling"
+	"github.com/omerdn1/hystrix-go/hystrix/rolling"
 )
 
 // DefaultMetricCollector holds information about the circuit state.

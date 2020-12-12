@@ -7,7 +7,7 @@ import (
 
 	"github.com/cactus/go-statsd-client/statsd"
 
-	metricCollector "github.com/kargakis/hystrix-go/hystrix/metric_collector"
+	metricCollector "github.com/omerdn1/hystrix-go/hystrix/metric_collector"
 )
 
 // StatsdCollector fulfills the metricCollector interface allowing users to ship circuit

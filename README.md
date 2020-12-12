@@ -1,8 +1,7 @@
-hystrix-go
-==========
+# hystrix-go
 
-[![Build Status](https://travis-ci.org/kargakis/hystrix-go.png?branch=master)](https://travis-ci.org/kargakis/hystrix-go)
-[![GoDoc Documentation](http://godoc.org/github.com/kargakis/hystrix-go/hystrix?status.png)](https://godoc.org/github.com/kargakis/hystrix-go/hystrix)
+[![Build Status](https://travis-ci.org/omerdn1/hystrix-go.png?branch=master)](https://travis-ci.org/omerdn1/hystrix-go)
+[![GoDoc Documentation](http://godoc.org/github.com/omerdn1/hystrix-go/hystrix?status.png)](https://godoc.org/github.com/omerdn1/hystrix-go/hystrix)
 
 [Hystrix](https://github.com/Netflix/Hystrix) is a great project from Netflix.
 
@@ -14,18 +13,17 @@ hystrix-go aims to allow Go programmers to easily build applications with simila
 
 For more about how Hystrix works, refer to the [Java Hystrix wiki](https://github.com/Netflix/Hystrix/wiki)
 
-For API documentation, refer to [GoDoc](https://godoc.org/github.com/kargakis/hystrix-go/hystrix)
+For API documentation, refer to [GoDoc](https://godoc.org/github.com/omerdn1/hystrix-go/hystrix)
 
-How to use
-----------
+## How to use
 
 ```go
-import "github.com/kargakis/hystrix-go/hystrix"
+import "github.com/omerdn1/hystrix-go/hystrix"
 ```
 
 ### Execute code as a Hystrix command
 
-Define your application logic which relies on external systems, passing your function to ```hystrix.Go```. When that system is healthy this will be the only thing which executes.
+Define your application logic which relies on external systems, passing your function to `hystrix.Go`. When that system is healthy this will be the only thing which executes.
 
 ```go
 hystrix.Go("my_command", func() error {
@@ -36,7 +34,7 @@ hystrix.Go("my_command", func() error {
 
 ### Defining fallback behavior
 
-If you want code to execute during a service outage, pass in a second function to ```hystrix.Go```. Ideally, the logic here will allow your application to gracefully handle external services being unavailable.
+If you want code to execute during a service outage, pass in a second function to `hystrix.Go`. Ideally, the logic here will allow your application to gracefully handle external services being unavailable.
 
 This triggers when your code returns an error, or whenever it is unable to complete based on a [variety of health checks](https://github.com/Netflix/Hystrix/wiki/How-it-Works).
 
@@ -52,7 +50,7 @@ hystrix.Go("my_command", func() error {
 
 ### Waiting for output
 
-Calling ```hystrix.Go``` is like launching a goroutine, except you receive a channel of errors you can choose to monitor.
+Calling `hystrix.Go` is like launching a goroutine, except you receive a channel of errors you can choose to monitor.
 
 ```go
 output := make(chan bool, 1)
@@ -83,7 +81,7 @@ err := hystrix.Do("my_command", func() error {
 
 ### Configure settings
 
-During application boot, you can call ```hystrix.ConfigureCommand()``` to tweak the settings for each command.
+During application boot, you can call `hystrix.ConfigureCommand()` to tweak the settings for each command.
 
 ```go
 hystrix.ConfigureCommand("my_command", hystrix.CommandConfig{
@@ -93,11 +91,11 @@ hystrix.ConfigureCommand("my_command", hystrix.CommandConfig{
 })
 ```
 
-You can also use ```hystrix.Configure()``` which accepts a ```map[string]CommandConfig```.
+You can also use `hystrix.Configure()` which accepts a `map[string]CommandConfig`.
 
 ### Enable dashboard metrics
 
-In your main.go, register the event stream HTTP handler on a port and launch it in a goroutine.  Once you configure turbine for your [Hystrix Dashboard](https://github.com/Netflix/Hystrix/tree/master/hystrix-dashboard) to start streaming events, your commands will automatically begin appearing.
+In your main.go, register the event stream HTTP handler on a port and launch it in a goroutine. Once you configure turbine for your [Hystrix Dashboard](https://github.com/Netflix/Hystrix/tree/master/hystrix-dashboard) to start streaming events, your commands will automatically begin appearing.
 
 ```go
 hystrixStreamHandler := hystrix.NewStreamHandler()
@@ -119,25 +117,28 @@ if err != nil {
 metricCollector.Registry.Register(c.NewStatsdCollector)
 ```
 
-FAQ
----
+## FAQ
 
 **What happens if my run function panics? Does hystrix-go trigger the fallback?**
 
-No. hystrix-go does not use ```recover()``` so panics will kill the process like normal.
+No. hystrix-go does not use `recover()` so panics will kill the process like normal.
 
-Contribute
-----------
+## Contribute
 
 Build the project:
+
 ```
 make build
 ```
+
 Run the unit tests:
+
 ```
 make test
 ```
+
 Run the verification tests:
+
 ```
 make verify
 ```

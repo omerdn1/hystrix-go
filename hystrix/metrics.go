@@ -5,8 +5,8 @@ import (
 	"sync"
 	"time"
 
-	metricCollector "github.com/kargakis/hystrix-go/hystrix/metric_collector"
-	"github.com/kargakis/hystrix-go/hystrix/rolling"
+	metricCollector "github.com/omerdn1/hystrix-go/hystrix/metric_collector"
+	"github.com/omerdn1/hystrix-go/hystrix/rolling"
 )
 
 type commandExecution struct {

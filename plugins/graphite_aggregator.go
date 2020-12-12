@@ -9,7 +9,7 @@ import (
 
 	"github.com/rcrowley/go-metrics"
 
-	metricCollector "github.com/kargakis/hystrix-go/hystrix/metric_collector"
+	metricCollector "github.com/omerdn1/hystrix-go/hystrix/metric_collector"
 )
 
 var makeTimerFunc = func() interface{} { return metrics.NewTimer() }
