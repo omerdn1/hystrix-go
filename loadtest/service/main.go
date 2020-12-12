@@ -13,6 +13,7 @@ import (
 
 	"github.com/cactus/go-statsd-client/statsd"
 	"github.com/omerdn1/hystrix-go/hystrix"
+	metricCollector "github.com/omerdn1/hystrix-go/hystrix/metric_collector"
 	"github.com/omerdn1/hystrix-go/plugins"
 )
 
